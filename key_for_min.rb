@@ -3,13 +3,13 @@
 
 def key_for_min_value(name_hash)
   if name_hash.length > 1
-    min_key = ""
-    name_hash.collect do |key, value|
-        value.collect do |a, b|
-          a <=> b
-          min_key = a
-          min_key
+    min_key = Float::INFINITY
+    name_hash.each do |key, value|
+          value < min_key
+            min_key = value
+            min_item = key
         end
+        min_item
     end
   else nil
   end
