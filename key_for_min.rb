@@ -5,9 +5,9 @@ def key_for_min_value(name_hash)
   if name_hash.length > 1
     min_key = ""
     name_hash.collect do |key, value|
-        key.collect do |a, b|
+        value.collect do |a, b|
           a <=> b
-          min_key = a
+          min_key = [value]
           min_key
         end
     end
